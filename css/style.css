@@ -1,4 +1,4 @@
-/* Base Styles */
+/* General Styles */
 :root {
     --primary-color: #bfc523;
     --secondary-color: #2c3e50;
@@ -619,4 +619,70 @@ footer {
     .skills {
         grid-template-columns: 1fr;
     }
+}
+/* Video container styling */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    background: #000;
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-caption {
+    text-align: center;
+    margin-top: 0.5rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* VR features grid */
+.vr-features {
+    margin: 2rem 0;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.feature {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(0,0,0,0.05);
+    border-radius: 8px;
+}
+
+.feature i {
+    font-size: 2rem;
+    color: #3a86ff;
+    margin-bottom: 1rem;
+}
+/* Curved video container */
+.curved-video {
+    border-radius: 20px; /* Adjust this value for more/less curvature */
+    overflow: hidden; /* This ensures the video corners are clipped */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2); /* Optional: adds depth */
+}
+
+
+.curved-video.vr-style {
+    border-radius: 50% / 10%; /* Creates an oval shape */
+    padding: 20px 0; /* Adds space above/below */
+    background: #111; /* Dark background for VR effect */
+}
+
+.curved-video.vr-style video {
+    border-radius: 50% / 10%;
 }

@@ -42,19 +42,31 @@
             <p class="subtitle">BSc IT Final Project - Exploring VR therapy solutions</p>
             
             <div class="project-media">
-                <!-- VR Project Video -->
-                <div class="media-item">
-                    <div class="video-container">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/your-video-id" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
+                <div class="video-container curved-video">
+                    <video 
+                        width="560" 
+                        height="315" 
+                        controls 
+                        autoplay 
+                        muted 
+                        playsinline
+                        aria-label="Demonstration of VR acrophobia treatment experience"
+                        aria-describedby="video-description"
+                    >
+                        <source src="/images/Sequence 01.mp4" type="video/mp4">
+                        <source src="/images/Sequence 01.webm" type="video/webm">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p id="video-description" class="sr-only">This video demonstrates the virtual reality environment created for treating fear of heights, showing different height levels and interaction elements.</p>
+                    <p class="video-caption">Demo of the VR acrophobia treatment experience</p>
                 </div>
-                
+
                 <!-- VR Project Screenshots -->
                 <div class="media-grid">
-                    <img src="../../images/vr-screenshot1.jpg" alt="VR Screenshot 1 - Starting environment">
-                    <img src="../../images/vr-screenshot2.jpg" alt="VR Screenshot 2 - Medium height view">
-                    <img src="../../images/vr-screenshot3.jpg" alt="VR Screenshot 3 - High altitude view">
-                    <img src="../../images/vr-screenshot4.jpg" alt="VR Screenshot 4 - User interface">
+                    <img src="../../images/vr-screenshot1.jpg" alt="VR Screenshot 1 - Starting environment" loading="lazy">
+                    <img src="../../images/vr-screenshot2.jpg" alt="VR Screenshot 2 - Medium height view" loading="lazy">
+                    <img src="../../images/vr-screenshot3.jpg" alt="VR Screenshot 3 - High altitude view" loading="lazy">
+                    <img src="../../images/vr-screenshot4.jpg" alt="VR Screenshot 4 - User interface" loading="lazy">
                 </div>
             </div>
             
@@ -67,18 +79,38 @@
                 <h2>Technical Details</h2>
                 <ul>
                     <li>Developed using Unity 3D game engine</li>
-                    <li>Oculus Rift for VR immersion</li>
+                    <li>Meta Quest 2 for VR immersion</li>
                     <li>Implemented gradual exposure therapy techniques</li>
-                    <li>Integrated biometric feedback (heart rate monitoring)</li>
-                    <li>Custom shaders for realistic height perception</li>
+                    <li>Had supervisors from the psychology department to make sure the therapeutic scenarios were effective</li>
                     <li>Dynamic difficulty adjustment based on user responses</li>
                 </ul>
+                <!-- Add this near your technical details -->
+<div class="vr-features">
+    <h3>VR-Specific Features</h3>
+    <div class="features-grid">
+        <div class="feature">
+            <i class="fas fa-arrows-alt"></i>
+            <h4>6DOF Movement</h4>
+            <p>Full freedom of movement with 6 degrees of freedom tracking</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-hand-paper"></i>
+            <h4>Hand Tracking</h4>
+            <p>Natural interaction using Oculus hand tracking</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-heartbeat"></i>
+            <h4>Biofeedback</h4>
+            <p>Heart rate monitoring integration for anxiety detection</p>
+        </div>
+    </div>
+</div>
                 
                 <h2>Development Process</h2>
                 <p>The project began with extensive research into both VR technology and the psychology of phobias. I collaborated with psychology students to design therapeutic scenarios that would be both effective and safe for users.</p>
-                
-                <p>After prototyping several environments, I conducted user testing with volunteers who self-identified as having some degree of acrophobia. Their feedback helped refine the experience to maximize therapeutic benefit while minimizing discomfort.</p>
-                
+
+                <p>After prototyping several environments, I conducted user testing with volunteers who self-identified as having some degree of acrophobia and also others who did not have the phobia. Their feedback helped refine the experience to maximize therapeutic benefit while minimizing discomfort.</p>
+
                 <h2>Results</h2>
                 <p>The project showed promising results in initial testing with participants reporting reduced anxiety levels after multiple VR exposure sessions. The research paper was awarded a distinction by the university.</p>
                 
@@ -101,7 +133,7 @@
             <div class="footer-content">
                 <div class="footer-section about">
                     <h3>About Me</h3>
-                    <p>IT graduate with diverse skills in web development, 3D design, VR, and multimedia creation.</p>
+                    <p>A tech-savvy creative with a BSc in IT and a multimedia background, blending coding, 3D design, VR, and visual storytelling to craft immersive digital experiences. Currently working as an IT Officer while exploring culture through design and media.</p>
                 </div>
                 <div class="footer-section links">
                     <h3>Quick Links</h3>

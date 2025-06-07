@@ -3,31 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Design Projects | Muhammad Mukhtar Zikirullahi</title>
+    <title>3D Exterior Design | Portfolio</title>
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Additional styles for 3D design page */
+        .video-container {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            background: #000;
+            margin-bottom: 1rem;
+        }
+        
+        .video-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+        
+        .video-container video {
+            width: 100%;
+            display: block;
+        }
+        
+        .video-caption {
+            text-align: center;
+            margin-top: 1rem;
+            color: #666;
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+        
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .media-grid img {
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            aspect-ratio: 16/9;
+        }
+        
+        .media-grid img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .project-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 1.5rem 0;
+        }
+        
+        .skill-tag {
+            background: #f0f0f0;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: #555;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: #3a86ff;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #2667cc;
+            transform: translateY(-2px);
+        }
+        
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <div class="logo">Muhammad Mukhtar Zikirullahi</div>
+            <div class="logo"></div>
             <nav>
                 <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../../about.html">About</a></li>
                     <li class="dropdown">
-                        <a href="portfolio/">Portfolio <i class="fas fa-chevron-down"></i></a>
+                        <a href="../" class="active">Portfolio <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="portfolio/web-development.html">Web Development</a></li>
-                            <li><a href="portfolio/3d-design.html">3D Design</a></li>
-                            <li><a href="/portfolio/VR-project.html">VR Project</a></li>
-                            <li><a href="portfolio/photography.html">Photography</a></li>
-                            <li><a href="portfolio/videography.html">Videography</a></li>
-                            <li><a href="portfolio/logo-design.html">Logo Design</a></li>
-                            <li><a href="portfolio/3d-models.html">3D Models</a></li>
+                            <li><a href="web-development.html">Web Development</a></li>
+                            <li><a href="3d-design.html" class="active">3D Design</a></li>
+                            <li><a href="VR-project.html">VR Project</a></li>
+                            <li><a href="photography.html">Photography</a></li>
+                            <li><a href="videography.html">Videography</a></li>
+                            <li><a href="logo-design.html">Logo Design</a></li>
+                            <li><a href="3d-models.html">3D Models</a></li>
                         </ul>
                     </li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="../../contact.html">Contact</a></li>
                 </ul>
             </nav>
             <div class="mobile-menu-btn">
@@ -45,46 +139,95 @@
                 <!-- 3D Design Video -->
                 <div class="media-item">
                     <div class="video-container">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/your-3d-design-video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <!-- First Video -->
+                        <video id="firstVideo" 
+                            width="100%" 
+                            controls 
+                            muted 
+                            playsinline
+                            aria-label="3D exterior design video part 1"
+                            aria-describedby="video-description1">
+                            <source src="/images/Aptech/aptech complete.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p id="video-description1" class="sr-only">First part of the 3D exterior design showing the building overview.</p>
+                        
+                        <!-- Second Video (hidden initially) -->
+                        <video id="secondVideo" 
+                            width="100%" 
+                            controls 
+                            muted 
+                            playsinline
+                            style="display:none;"
+                            aria-label="3D exterior design video part 2"
+                            aria-describedby="video-description2">
+                            <source src="/images/Aptech/aptech.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p id="video-description2" class="sr-only">Second part of the 3D exterior design showing detailed views.</p>
+                        
+                        <p class="video-caption">3D architectural visualization sequence</p>
                     </div>
                 </div>
                 
                 <!-- 3D Design Renders -->
                 <div class="media-grid">
-                    <img src="../../images/3d-render1.jpg" alt="3D Render 1 - Front view">
-                    <img src="../../images/3d-render2.jpg" alt="3D Render 2 - Aerial view">
-                    <img src="../../images/3d-render3.jpg" alt="3D Render 3 - Interior space">
-                    <img src="../../images/3d-render4.jpg" alt="3D Render 4 - Detail shot">
+                    <img src="../../images/Aptech/aptech.jpg" alt="3D Render - Front view of the building" loading="lazy">
+                    <img src="/images/Aptech/Aptech/entrance.jpg" alt="3D Render - Main entrance detailed view" loading="lazy">
+                    <img src="/images/Aptech/Aptech/stairs.jpg" alt="3D Render - Interior staircase design" loading="lazy">
+                    <img src="../../images/Aptech/exterior-kanoc.jpg" alt="3D Render - Exterior landscape view" loading="lazy">
                 </div>
             </div>
             
             <div class="project-description">
                 <h2>Project Overview</h2>
-                <p>This project involved creating a detailed 3D exterior design of my former educational institution. The goal was to visualize the campus architecture with realistic materials and lighting.</p>
+                <p>This architectural visualization project recreates my former educational institution with photorealistic detail. The complete exterior modeling includes accurate proportions, materials, and environmental lighting to achieve a true-to-life representation.</p>
+                
+                <div class="software-showcase">
+                    <h3>Software Used</h3>
+                    <div class="software-icons">
+                        <div class="software-item">
+                            <i class="fab fa-autoprefixer"></i>
+                            <span>AutoCAD</span>
+                        </div>
+                        <div class="software-item">
+                            <i class="fas fa-cube"></i>
+                            <span>3DS Max</span>
+                        </div>
+                        <div class="software-item">
+                            <i class="fas fa-sun"></i>
+                            <span>V-Ray</span>
+                        </div>
+                    </div>
+                </div>
                 
                 <h2>Technical Details</h2>
                 <ul>
-                    <li>Modeled in Blender and 3DS Max</li>
-                    <li>High-poly modeling for detailed architecture</li>
-                    <li>PBR materials for realistic surfaces</li>
-                    <li>Global illumination lighting</li>
-                    <li>Post-processing in Photoshop</li>
+                    <li>Precise modeling based on architectural blueprints</li>
+                    <li>High-poly detailing for realistic facade elements</li>
+                    <li>Procedural materials for accurate surface textures</li>
+                    <li>HDRI lighting for natural environment reflections</li>
+                    <li>Render passes composited for post-production control</li>
                 </ul>
                 
                 <h2>Development Process</h2>
-                <p>I began with reference photos and architectural plans of the existing buildings. After blocking out the basic shapes, I refined the models with proper proportions and architectural details.</p>
-                
-                <p>The texturing phase involved creating custom materials that matched the real-world surfaces. Final renders were composited with environmental elements and post-processed for maximum realism.</p>
+                <p>The workflow began with CAD plan conversion and site measurement analysis. After establishing the base structure, I focused on:</p>
+                <ol>
+                    <li>Architectural detailing (windows, railings, roofing)</li>
+                    <li>Material definition and UV mapping</li>
+                    <li>Daylight system setup for accurate shadows</li>
+                    <li>Render optimization for quality/efficiency balance</li>
+                </ol>
                 
                 <div class="project-skills">
-                    <span class="skill-tag">Blender</span>
-                    <span class="skill-tag">3DS Max</span>
                     <span class="skill-tag">Architectural Visualization</span>
-                    <span class="skill-tag">PBR Texturing</span>
-                    <span class="skill-tag">Lighting</span>
+                    <span class="skill-tag">3D Modeling</span>
+                    <span class="skill-tag">Photoreal Rendering</span>
+                    <span class="skill-tag">Lighting Design</span>
+                    <span class="skill-tag">Material Creation</span>
                 </div>
                 
-                <a href="../" class="btn">Back to Portfolio</a>
+                <a href="../" class="btn"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
             </div>
         </div>
     </section>
@@ -94,7 +237,7 @@
             <div class="footer-content">
                 <div class="footer-section about">
                     <h3>About Me</h3>
-                    <p>IT graduate with diverse skills in web development, 3D design, VR, and multimedia creation.</p>
+                    <p>A tech-savvy creative with a BSc in IT and a multimedia background, blending coding, 3D design, VR, and visual storytelling to craft immersive digital experiences. Currently working as an IT Officer while exploring culture through design and media.</p>
                 </div>
                 <div class="footer-section links">
                     <h3>Quick Links</h3>
@@ -102,7 +245,7 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="portfolio/">Portfolio</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section contact">
@@ -120,7 +263,39 @@
             </div>
         </div>
     </footer>
-
     <script src="../../js/main.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const firstVideo = document.getElementById('firstVideo');
+        const secondVideo = document.getElementById('secondVideo');
+        
+        // Ensure videos are loaded
+        firstVideo.load();
+        secondVideo.load();
+        
+        firstVideo.addEventListener('ended', function() {
+            // Hide first video and show second video
+            firstVideo.style.display = 'none';
+            secondVideo.style.display = 'block';
+            
+            // Play second video automatically
+            secondVideo.play().catch(e => console.log("Autoplay prevented:", e));
+        });
+        
+        // Optional: Loop back to first video when second ends
+        secondVideo.addEventListener('ended', function() {
+            secondVideo.style.display = 'none';
+            firstVideo.style.display = 'block';
+            firstVideo.currentTime = 0;
+        });
+        
+        // Mobile menu functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const nav = document.querySelector('nav ul');
+        mobileMenuBtn.addEventListener('click', function() {
+            nav.classList.toggle('active');
+        });
+    });
+    </script>
 </body>
 </html>

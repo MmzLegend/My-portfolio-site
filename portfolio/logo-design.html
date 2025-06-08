@@ -3,10 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logo Design Projects | Your Name</title>
-        <base href="https://mmzlegend.github.io/My-portfolio-site/">
-    <link rel="stylesheet" href="css/style.css">
+    <title>Logo Design Project | Muhammad Mukhtar Zikirullahi</title>
+    <link rel="stylesheet" href="/My-portfolio-site/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .logo-item {
+            position: relative;
+            width: 100%;
+            padding-bottom: 100%;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .logo-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+        
+        .logo-item img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 20px;
+            background: white;
+        }
+        
+        @media (max-width: 768px) {
+            .logo-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -14,20 +59,19 @@
             <div class="logo">Muhammad Mukhtar Zikirullahi</div>
             <nav>
                 <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="/My-portfolio-site/index.html" class="active">Home</a></li>
+                    <li><a href="/My-portfolio-site/about.html">About</a></li>
                     <li class="dropdown">
-                        <a href="portfolio/">Portfolio <i class="fas fa-chevron-down"></i></a>
+                        <a href="/My-portfolio-site/portfolio/">Portfolio <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="portfolio/web-development.html">Web Development</a></li>
-                            <li><a href="portfolio/3d-design.html">3D Design</a></li>
-                            <li><a href="portfolio/vr-project.html">VR Project</a></li>
-                            <li><a href="portfolio/photography.html">Photography</a></li>
-                            <li><a href="portfolio/logo-design.html">Logo Design</a></li>
-                            <li><a href="portfolio/3d-models.html">3D Models</a></li>
+                            <li><a href="/My-portfolio-site/portfolio/web-development.html">Web Development</a></li>
+                            <li><a href="/My-portfolio-site/portfolio/3d-design.html">3D Design</a></li>
+                            <li><a href="/My-portfolio-site/portfolio/vr-project.html">VR Project</a></li>
+                            <li><a href="/My-portfolio-site/portfolio/photography.html">Photography</a></li>
+                            <li><a href="/My-portfolio-site/portfolio/logo-design.html">Logo Design</a></li>
                         </ul>
                     </li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="/My-portfolio-site/contact.html">Contact</a></li>
                 </ul>
             </nav>
             <div class="mobile-menu-btn">
@@ -38,56 +82,55 @@
 
     <section class="project-detail">
         <div class="container">
-            <h1>Logo Design Projects</h1>
-            <p class="subtitle">Brand identity creations for businesses</p>
+            <h1>RELEC Design Project</h1>
+            <p class="subtitle">Brand identity</p>
             
             <div class="project-media">
-                <!-- Logo Presentation -->
-                <div class="media-grid">
-                    <img src="../../images/logo-design1.jpg" alt="Logo Design 1 - Full branding" loading="lazy">
-                    <img src="../../images/logo-design2.jpg" alt="Logo Design 2 - On mockups" loading="lazy">
-                    <img src="../../images/logo-design3.jpg" alt="Logo Design 3 - Variations" loading="lazy">
-                    <img src="../../images/logo-design4.jpg" alt="Logo Design 4 - Application examples" loading="lazy">
+                <div class="logo-grid">
+                    <div class="logo-item">
+                        <img src="/My-portfolio-site/images/rlclogo.png" alt="RLC Logo Design" loading="lazy">
+                    </div>
+                    <div class="logo-item">
+                        <img src="/My-portfolio-site/images/rlcwall.png" alt="RLC Wall Mockup" loading="lazy">
+                    </div>
+                    <div class="logo-item">
+                        <img src="/My-portfolio-site/images/rlcwl.png" alt="RLC White Label Version" loading="lazy">
+                    </div>
+                    <div class="logo-item">
+                        <img src="/My-portfolio-site/images/rlcbook.png" alt="RLC Business Card Mockup" loading="lazy">
+                    </div>
                 </div>
             </div>
             
             <div class="project-description">
-                <h2>Project Overview</h2>
-                <p>This collection showcases my logo design work created for various businesses. Each logo was designed to communicate the brand's identity while being versatile across different applications.</p>
+                <h2>RELEC Overview</h2>
+                <p>RELEC is a conceptual brand built on the ideas of continuity, unity, and excellence. The logo was designed using the ancient symbol of the <em>Ouroboros</em>—a serpent eating its own tail, symbolizing eternal cycles and unbroken unity. The design draws stylistic inspiration from the crest of Madrid, reflecting elements of royalty, legacy, and power.</p>
                 
-                <h2>Design Process</h2>
+                <h2>Design Intent</h2>
                 <ul>
-                    <li>Client consultation to understand brand values</li>
-                    <li>Market research and competitor analysis</li>
-                    <li>Sketching and conceptualization</li>
-                    <li>Digital rendering in Illustrator</li>
-                    <li>Presentation of multiple concepts</li>
-                    <li>Refinement based on feedback</li>
-                    <li>Delivery of final files and brand guidelines</li>
+                    <li>Symbolism: The Ouroboros emphasizes continuous growth and eternal strength</li>
+                    <li>Style: Royal insignia inspiration conveys prestige and authority</li>
+                    <li>Typography: Clean and modern, balancing the historic symbol with a contemporary identity</li>
                 </ul>
                 
-                <h2>Technical Details</h2>
-                <p>All logos were created as vector graphics in Adobe Illustrator, ensuring scalability. Designs consider:</p>
-                <ul>
-                    <li>Visual balance and proportion</li>
-                    <li>Color psychology</li>
-                    <li>Typography pairing</li>
-                    <li>Versatility across media</li>
-                    <li>Reproduction at small sizes</li>
-                </ul>
-                
+                <h2>Tools & Process</h2>
+                <p>Designed in Adobe Illustrator as a fully scalable vector. The process included concept sketching, vector refinement, and visual mockups to test versatility across branding assets.</p>
+                                
                 <div class="project-skills">
                     <span class="skill-tag">Logo Design</span>
                     <span class="skill-tag">Brand Identity</span>
                     <span class="skill-tag">Adobe Illustrator</span>
-                    <span class="skill-tag">Typography</span>
-                    <span class="skill-tag">Vector Graphics</span>
+                    <span class="skill-tag">Concept Branding</span>
+                    <span class="skill-tag">Vector Art</span>
                 </div>
                 
                 <a href="../" class="btn">Back to Portfolio</a>
             </div>
+
         </div>
     </section>
+
+
 
     <footer>
         <div class="container">
@@ -99,10 +142,10 @@
                 <div class="footer-section links">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="/index.html">Home</a></li>
-                        <li><a href="/about.html">About</a></li>
-                        <li><a href="/portfolio/">Portfolio</a></li>
-                        <li><a href="/contact.html">Contact</a></li>
+                        <li><a href="/My-portfolio-site/index.html">Home</a></li>
+                        <li><a href="/My-portfolio-site/about.html">About</a></li>
+                        <li><a href="/My-portfolio-site/portfolio/">Portfolio</a></li>
+                        <li><a href="/My-portfolio-site/contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section contact">

@@ -4,8 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me | Muhammad Mukhtar Zikirullahi</title>
-    <link rel="stylesheet" href="/My-portfolio-site/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .about-hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/about-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .skill-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .skill-card i {
+            font-size: 2.5rem;
+            color: #3a86ff;
+            margin-bottom: 20px;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 40px auto;
+        }
+        
+        .timeline-item {
+            padding: 20px 0;
+            position: relative;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: #3a86ff;
+        }
+        
+        .timeline-content {
+            margin-left: 60px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-date {
+            position: absolute;
+            left: 0;
+            top: 20px;
+            background: #3a86ff;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -13,19 +88,19 @@
             <div class="logo">Muhammad Mukhtar Zikirullahi</div>
             <nav>
                 <ul>
-                    <li><a href="/My-portfolio-site/index.html">Home</a></li>
-                    <li><a href="/My-portfolio-site/about.html" class="active">About</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
                     <li class="dropdown">
-                        <a href="/My-portfolio-site/portfolio/">Portfolio <i class="fas fa-chevron-down"></i></a>
+                        <a href="portfolio/">Portfolio <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/My-portfolio-site/portfolio/web-development.html">Web Development</a></li>
-                            <li><a href="/My-portfolio-site/portfolio/3d-design.html">3D Design</a></li>
-                            <li><a href="/My-portfolio-site/portfolio/VR-project.html">VR Project</a></li>
-                            <li><a href="/My-portfolio-site/portfolio/photography.html">Photography</a></li>
-                            <li><a href="/My-portfolio-site/portfolio/logo-design.html">Logo Design</a></li>
+                            <li><a href="portfolio/web-development.html">Web Development</a></li>
+                            <li><a href="portfolio/3d-design.html">3D Design</a></li>
+                            <li><a href="portfolio/VR-project.html">VR Project</a></li>
+                            <li><a href="portfolio/photography.html">Photography</a></li>
+                            <li><a href="portfolio/logo-design.html">Logo Design</a></li>
                         </ul>
                     </li>
-                    <li><a href="/My-portfolio-site/contact.html">Contact</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
             <div class="mobile-menu-btn">
@@ -34,42 +109,109 @@
         </div>
     </header>
 
-    <section class="about-section">
+    <section class="about-hero">
         <div class="container">
             <h1>About Me</h1>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="/My-portfolio-site/images/my-photo.jpg" alt="My picture, presenting a neutral and professional appearance" loading="lazy">
-                </div>
-                <div class="about-text">
-                    <h2>Hello, I'm Muhammad Mukhtar Zikirullahi</h2>
-                    <p>I graduated with a BSc in Information Technology from Middlesex University Dubai and also hold an Advanced Diploma in Multimedia. While my academic background leans toward IT, my heart has always been in the creative world. From 3D modeling and design to photography and videography, I’ve always found joy in blending technology with creativity.</p>
-                    <p>My journey began with 3D modeling during my diploma days, where I started by creating simple objects and environments. University introduced me to the coding and development side of tech, expanding my toolkit and pushing me to explore how I could merge both the technical and the artistic. Now, as I prepare to pursue my master’s degree, I’m even more driven to combine these two worlds into something powerful and unique.</p>
-                    <p>Since graduating, I’ve worked across various creative roles — including videographer, photographer, graphic designer — and I'm currently serving as an IT Officer at Resource Centre for Human Rights and Civic Education CHRICED. Each experience continues to shape how I see digital storytelling and design, and I’m constantly pushing boundaries to deliver experiences that are both visually compelling and technically sound.</p>
-                    <p>Whether it’s through web development, 3D design, or immersive VR experiences, I’m passionate about creating digital content that resonates with people. I believe in the power of technology to tell stories and connect us in new ways.</p>
-                    <p>Feel free to explore my portfolio to see some of my work, and don’t hesitate to reach out if you’d like to collaborate or just chat about tech and creativity!</p>  
-                    <!-- Rest of your about text content -->
-                    
-                    <h3>Education</h3>
-                    <p><strong>Advanced Diploma in multimedia</strong><br>
-                    APTECH computer Education, 2022</p>
-                    <p><strong>BSc in Information Technology</strong><br>
-                    Middlesex University Dubai, 2023</p>
-                    
-                    <h3>Skills</h3>
-                    <div class="skills">
-                        <span class="skill">Web Development</span>
-                        <span class="skill">3D Design</span>
-                        <span class="skill">HTML</span>
-                        <span class="skill">CSS</span>
-                        <span class="skill">JavaScript</span>
-                        <span class="skill">3D Modeling</span>
-                        <span class="skill">Photography</span>
-                        <span class="skill">Videography</span>
-                    </div>
+            <p class="subtitle">Creative Technologist | Multimedia Specialist | IT Professional</p>
+        </div>
+    </section>
 
-                    <a href="/My-portfolio-site/portfolio/" class="btn">View My Portfolio</a>
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Who I Am</h2>
+                    <p>I'm Muhammad Mukhtar Zikirullahi, a multidisciplinary creative technologist with a BSc in Information Technology and a passion for blending technical skills with artistic vision. My work sits at the intersection of digital development and immersive design, where I combine programming precision with visual storytelling.</p>
+                    
+                    <p>Currently working as an IT Officer, I approach every project with both technical expertise and creative flair—whether building responsive websites, designing architectural visualizations, developing therapeutic VR experiences, or capturing authentic moments through my lens.</p>
+                    
+                    <p>My Nigerian heritage deeply influences my perspective, driving me to create work that bridges technology and cultural narratives. When not coding or designing, you'll find me exploring new tools, studying user experience principles, or mentoring aspiring creatives.</p>
                 </div>
+                
+                <div class="about-image">
+                    <img src="images/my-photo.jpg" alt="Muhammad Mukhtar Zikirullahi" loading="lazy">
+                </div>
+            </div>
+            
+            <h2 class="section-title">My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Web Development</h3>
+                    <p>Building responsive, semantic HTML5 structures with clean CSS. Experienced in frontend foundations and collaborative development workflows.</p>
+                    <div class="skill-tags">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>Responsive Design</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card">
+                    <i class="fas fa-cube"></i>
+                    <h3>3D Design & VR</h3>
+                    <p>Creating immersive environments from architectural visualization to therapeutic VR experiences. My BSc research focused on VR for acrophobia treatment.</p>
+                    <div class="skill-tags">
+                        <span>Unity 3D</span>
+                        <span>3DS Max</span>
+                        <span>AutoCAD</span>
+                        <span>V-Ray</span>
+                        <span>Oculus/Meta</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card">
+                    <i class="fas fa-camera"></i>
+                    <h3>Visual Storytelling</h3>
+                    <p>Capturing authentic moments through photography and crafting brand identities through logo design and visual concepts.</p>
+                    <div class="skill-tags">
+                        <span>Photography</span>
+                        <span>Logo Design</span>
+                        <span>Adobe Illustrator</span>
+                        <span>Lightroom</span>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 class="section-title">My Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2023</div>
+                    <div class="timeline-content">
+                        <h3>BSc in Information Technology</h3>
+                        <p>Completed degree with research project: "VR System for Acrophobia Treatment" using Unity and Oculus Meta Quest 2</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2022</div>
+                    <div class="timeline-content">
+                        <h3>3D Architectural Visualization</h3>
+                        <p>Created photorealistic renders of educational institution using 3DS Max and V-Ray</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2021</div>
+                    <div class="timeline-content">
+                        <h3>Frontend Development</h3>
+                        <p>Developed semantic HTML structures for business websites as part of web development training</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2020</div>
+                    <div class="timeline-content">
+                        <h3>Multimedia Exploration</h3>
+                        <p>Began combining photography, logo design, and 3D modeling into cohesive creative projects</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cta-section">
+                <h2>Let's Create Together</h2>
+                <p>Have a project in mind or want to discuss potential collaborations?</p>
+                <a href="contact.html" class="btn">Get In Touch</a>
             </div>
         </div>
     </section>
@@ -84,10 +226,10 @@
                 <div class="footer-section links">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
-                        <li><a href="../portfolio/">Portfolio</a></li>
-                        <li><a href="../contact.html">Contact</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section contact">
@@ -106,6 +248,6 @@
         </div>
     </footer>
 
-    <script src="/My-portfolio-site/js/main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

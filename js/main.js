@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile Menu Toggle
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    try {
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navMenu = document.querySelector('nav ul');
     const dropdowns = document.querySelectorAll('.dropdown');
     
@@ -11,6 +11,11 @@ document.addEventListener('DOMContentLoaded', function() {
             this.querySelector('i').classList.toggle('fa-bars');
         });
     }
+
+    } catch (error) {
+        console.error("Menu Error:", error);
+    }
+});
     
     // Dropdown Toggle for Mobile
     dropdowns.forEach(dropdown => {

@@ -124,6 +124,7 @@ nav ul li a.active {
     visibility: hidden;
     transition: all 0.3s ease;
     z-index: 1001;
+    transform: none;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -132,6 +133,8 @@ nav ul li a.active {
 }
 
 .dropdown-menu li {
+    display: block;
+    width: 100%;
     margin: 0;
     padding: 10px 15px;
     border-bottom: 1px solid #eee;
@@ -891,4 +894,30 @@ footer {
     .portfolio-categories {
         grid-template-columns: 1fr;
     }
+}
+@media (max-width: 768px) {
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+        height: auto;
+    }
+    
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+    
+    .dropdown-menu li {
+        padding-left: 30px; /* Indent dropdown items */
+    }
+}
+.dropdown {
+    position: relative;
+}
+.dropdown.right-edge .dropdown-menu {
+    left: auto;
+    right: 0;
 }

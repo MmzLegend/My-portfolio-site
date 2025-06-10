@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Run on scroll
     window.addEventListener('scroll', animateOnScroll);
-});
+;
 document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navMenu = document.querySelector('nav ul');
@@ -137,4 +137,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+});
+document.querySelectorAll('.dropdown').forEach(dropdown => {
+    const rect = dropdown.getBoundingClientRect();
+    if (rect.right + 200 > window.innerWidth) {
+        dropdown.classList.add('right-edge');
+    }
 });

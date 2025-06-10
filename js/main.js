@@ -144,3 +144,26 @@ document.querySelectorAll('.dropdown').forEach(dropdown => {
         dropdown.classList.add('right-edge');
     }
 });
+document.addEventListener('DOMContentLoaded', function() {
+    function adjustDropdownPositions() {
+        document.querySelectorAll('.dropdown').forEach(dropdown => {
+            // Reset any previous adjustments
+            dropdown.classList.remove('right-edge');
+            
+            // Only calculate for desktop view
+            if (window.innerWidth > 768) {
+                const dropdownRect = dropdown.getBoundingClientRect();
+                const menuWidth = 200; // Same as min-width
+                
+                // Check if dropdown would go off-screen
+                if (dropdownRect.left + menuWidth > window.innerWidth) {
+                    dropdown.classList.add('right-edge');
+                }
+            }
+        });
+    }
+    
+    // Run initially and on window resize
+    adjustDropdownPositions();
+    window.addEventListener('resize', adjustDropdownPositions);
+});

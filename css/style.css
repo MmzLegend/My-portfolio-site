@@ -921,3 +921,40 @@ footer {
     left: auto;
     right: 0;
 }
+/* Dropdown Menu - Desktop */
+.dropdown-menu {
+    position: absolute;
+    top: 100%; /* Appears below parent */
+    left: 0;
+    background: white;
+    min-width: 200px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1001;
+    display: block;
+}
+.dropdown-menu li {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+}
+@media (max-width: 768px) {
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        display: none;
+    }
+    
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+    
+    .dropdown-menu li {
+        padding-left: 30px;
+    }
+}

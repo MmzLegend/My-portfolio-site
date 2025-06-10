@@ -167,3 +167,20 @@ document.addEventListener('DOMContentLoaded', function() {
     adjustDropdownPositions();
     window.addEventListener('resize', adjustDropdownPositions);
 });
+document.addEventListener('DOMContentLoaded', function() {
+    const firstVideo = document.querySelector('.video-container iframe:first-of-type');
+    const secondVideo = document.querySelector('.video-container iframe:last-of-type');
+    
+    // YouTube iframes need special handling for detecting when they end
+    // You'll need to use the YouTube IFrame API for proper detection
+    // This is a simplified version that may need adjustment
+    
+    // For demo purposes, we'll just show the basic structure
+    firstVideo.addEventListener('load', function() {
+        // This would need YouTube API implementation to properly detect end
+        console.log("First video loaded - would need YouTube API for end detection");
+    });
+    
+    // You would need to implement proper YouTube API handling here
+    // See: https://developers.google.com/youtube/iframe_api_reference
+});

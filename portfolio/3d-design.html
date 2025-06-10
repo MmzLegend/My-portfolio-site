@@ -6,6 +6,7 @@
     <title>3D Exterior Design | M M Zikirullahi</title>
     <link rel="stylesheet" href="/My-portfolio-site/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://www.youtube.com/iframe_api"></script>
     <style>
         .video-container {
             position: relative;
@@ -133,37 +134,42 @@
             <p class="subtitle">Institutional building visualization</p>
             
             <div class="project-media">
-                <!-- 3D Design Video -->
-                <div class="media-item">
-                    <div class="video-container">
-                        <!-- First Video -->
-                        <video id="firstVideo" 
-                            width="100%" 
-                            controls 
-                            muted 
-                            playsinline
-                            aria-label="3D exterior design video part 1"
-                            aria-describedby="video-description1"><source src="/My-portfolio-site/portfolio/aptech.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <p id="video-description1" class="sr-only">First part of the 3D exterior design showing the building overview.</p>
-                        <!-- Second Video (hidden initially) -->
-                        <video id="secondVideo" 
-                            width="100%" 
-                            controls 
-                            muted 
-                            playsinline
-                            style="display:none;"
-                            aria-label="3D exterior design video part 2"
-                            aria-describedby="video-description2">
-                            <source src="/My-portfolio-site/portfolio/aptech-complete.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <p id="video-description2" class="sr-only">Second part of the 3D exterior design showing detailed views.</p>
-                        
-                        <p class="video-caption">3D architectural visualization sequence</p>
-                    </div>
-                </div>
+    <!-- 3D Design Video -->
+    <div class="media-item">
+        <div class="video-container">
+            <!-- First YouTube Video -->
+            <iframe 
+                width="100%" 
+                height="315"
+                src="https://www.youtube.com/embed/sRZ-miMUxTE?start=0&autoplay=1"
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen
+                aria-label="3D exterior design video part 1"
+                aria-describedby="video-description1">
+            </iframe>
+            <div id="player1"></div>
+            <p id="video-description1" class="sr-only">First part of the 3D exterior design showing the building overview.</p>
+            
+            <!-- Second YouTube Video (hidden initially) -->
+            <iframe 
+                width="100%" 
+                height="315"
+                src="https://www.youtube.com/embed/NbdunYqzVN0" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen
+                style="display:none;"
+                aria-label="3D exterior design video part 2"
+                aria-describedby="video-description2">
+            </iframe>
+            <div id="player2" style="display:none;"></div>
+            <p id="video-description2" class="sr-only">Second part of the 3D exterior design showing detailed views.</p>
+            
+            <p class="video-caption">3D architectural visualization sequence</p>
+        </div>
+    </div>
+</div>
                 
                 <!-- 3D Design Renders -->
                 <div class="media-grid">
@@ -263,30 +269,42 @@
     </footer>
     <script src="/My-portfolio-site/js/main.js"></script>
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const firstVideo = document.getElementById('firstVideo');
-        const secondVideo = document.getElementById('secondVideo');
-        
-        // Ensure videos are loaded
-        firstVideo.load();
-        secondVideo.load();
-        
-        firstVideo.addEventListener('ended', function() {
-            // Hide first video and show second video
-            firstVideo.style.display = 'none';
-            secondVideo.style.display = 'block';
-            
-            // Play second video automatically
-            secondVideo.play().catch(e => console.log("Autoplay prevented:", e));
+    let player1, player2;
+
+    // Called by the YouTube API once it’s ready
+    function onYouTubeIframeAPIReady() {
+        player1 = new YT.Player('player1', {
+            videoId: 'sRZ-miMUxTE', // First video ID
+            playerVars: {
+                autoplay: 1,
+                controls: 1,
+                rel: 0,
+                modestbranding: 1
+            },
+            events: {
+                'onStateChange': onPlayer1StateChange
+            }
         });
-        
-        // Optional: Loop back to first video when second ends
-        secondVideo.addEventListener('ended', function() {
-            secondVideo.style.display = 'none';
-            firstVideo.style.display = 'block';
-            firstVideo.currentTime = 0;
+
+        player2 = new YT.Player('player2', {
+            videoId: 'NbdunYqzVN0', // Second video ID (can be different)
+            playerVars: {
+                autoplay: 0,
+                controls: 1,
+                rel: 0,
+                modestbranding: 1
+            }
         });
-    });
-    </script>
+    }
+
+    // When the first video ends
+    function onPlayer1StateChange(event) {
+        if (event.data === YT.PlayerState.ENDED) {
+            document.getElementById('player1').style.display = 'none';
+            document.getElementById('player2').style.display = 'block';
+            player2.playVideo();
+        }
+    }
+</script>
 </body>
 </html>

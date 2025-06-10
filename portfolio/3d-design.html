@@ -143,8 +143,7 @@
                             muted 
                             playsinline
                             aria-label="3D exterior design video part 1"
-                            aria-describedby="video-description1">
-                            <source src="aptech.mp4" type="video/mp4">
+                            aria-describedby="video-description1"><source src="/My-portfolio-site/images/Aptech/aptech.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                         <p id="video-description1" class="sr-only">First part of the 3D exterior design showing the building overview.</p>
@@ -157,7 +156,7 @@
                             style="display:none;"
                             aria-label="3D exterior design video part 2"
                             aria-describedby="video-description2">
-                            <source src="aptech-complete.mp4" type="video/mp4">
+                            <source src="/My-portfolio-site/images/Aptech/aptech-complete.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                         <p id="video-description2" class="sr-only">Second part of the 3D exterior design showing detailed views.</p>
@@ -286,13 +285,6 @@
             secondVideo.style.display = 'none';
             firstVideo.style.display = 'block';
             firstVideo.currentTime = 0;
-        });
-        
-        // Mobile menu functionality
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const nav = document.querySelector('nav ul');
-        mobileMenuBtn.addEventListener('click', function() {
-            nav.classList.toggle('active');
         });
     });
     </script>

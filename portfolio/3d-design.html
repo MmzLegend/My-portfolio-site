@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3D Exterior Design | M M Zikirullahi</title>
+    <link href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/My-portfolio-site/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script>
     <style>
         .video-container {
             position: relative;
@@ -172,12 +174,20 @@
 </div>
                 
                 <!-- 3D Design Renders -->
-                <div class="media-grid">
-                    <img src="/My-portfolio-site/images/Aptech/aptech.jpg" alt="3D Render - Front view of the building" loading="lazy">
-                    <img src="/My-portfolio-site/images/Aptech/Aptech/entrance.jpg" alt="3D Render - Main entrance detailed view" loading="lazy">
-                    <img src="/My-portfolio-site/images/Aptech/Aptech/stairs.jpg" alt="3D Render - Interior staircase design" loading="lazy">
-                    <img src="/My-portfolio-site/images/Aptech/exterior-kanoc.jpg" alt="3D Render - Original Exterior landscape view" loading="lazy">
-                </div>
+                <div class="media-grid" id="lightbox-gallery">
+    <a href="/My-portfolio-site/images/Aptech/aptech.jpg">
+        <img src="/My-portfolio-site/images/Aptech/aptech.jpg" alt="">
+    </a>
+    <a href="/My-portfolio-site/images/Aptech/Aptech/entrance.jpg">
+        <img src="/My-portfolio-site/images/Aptech/Aptech/entrance.jpg" alt="">
+    </a>
+    <a href="/My-portfolio-site/images/Aptech/Aptech/stairs.jpg">
+        <img src="/My-portfolio-site/images/Aptech/Aptech/stairs.jpg" alt="">
+    </a>
+    <a href="/My-portfolio-site/images/Aptech/exterior-kanoc.jpg">
+        <img src="/My-portfolio-site/images/Aptech/exterior-kanoc.jpg" alt="">
+    </a>
+</div>
             </div>
             
             <div class="project-description">
@@ -305,6 +315,10 @@
             player2.playVideo();
         }
     }
+    lightGallery(document.getElementById('lightbox-gallery'), {
+    selector: 'a',
+    download: false
+});
 </script>
 </body>
 </html>

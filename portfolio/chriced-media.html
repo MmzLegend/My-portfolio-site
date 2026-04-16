@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHRICED Media Project | M M Zikirullahi</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+        .video-caption {
+            text-align: center;
+            margin-top: 1rem;
+            color: #666;
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .media-grid iframe {
+            width: 100%;
+            height: 200px;
+            border-radius: 12px;
+        }
+
+        .project-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 1.5rem 0;
+        }
+
+        .skill-tag {
+            background: #f0f0f0;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: #555;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: #3a86ff;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #2667cc;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <div class="logo">M M Zikirullahi</div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="project-detail">
+    <div class="container">
+
+        <!-- TITLE -->
+        <h1>Digital Media & IT Operations at CHRICED</h1>
+        <p class="subtitle">
+        Content Production, Video Editing & Digital Infrastructure Development for CHRICED & CHRICED Radio/TV
+        </p>
+
+        <!-- FEATURED VIDEO (FGM PROJECT) -->
+        <div class="video-container">
+            <iframe 
+                src="https://www.youtube.com/embed/njUd4b2FLCU"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <p class="video-caption">
+            FGM Awareness Campaign Video
+        </p>
+
+        <!-- OTHER WORKS -->
+        <h2>CHRICED Radio/TV Contributions</h2>
+        <p>
+            I contributed to editing and post-production of multiple videos for CHRICED Radio/TV, focusing on storytelling, pacing, and audience engagement.
+        </p>
+
+        <div class="media-grid">
+            <iframe src="https://www.youtube.com/embed/VIDEO1"></iframe>
+            <iframe src="https://www.youtube.com/embed/VIDEO2"></iframe>
+            <iframe src="https://www.youtube.com/embed/VIDEO3"></iframe>
+        </div>
+
+        <!-- DESCRIPTION -->
+        <h2>Project Overview</h2>
+        <p>
+            This project involved producing and editing media content for CHRICED, combining storytelling and technical editing skills to deliver engaging and informative content.
+        </p>
+
+        <!-- ROLE -->
+        <h2>My Role</h2>
+        <ul>
+            <li>Video editing and sequencing</li>
+            <li>Audio synchronization and cleanup</li>
+            <li>Visual storytelling and pacing</li>
+            <li>Export optimization for online platforms</li>
+        </ul>
+
+        <!-- IMPACT -->
+        <h2>Impact</h2>
+        <p>
+            The FGM awareness video was created to educate viewers on a sensitive cultural issue, using visual storytelling to communicate its message effectively.
+        </p>
+
+        <!-- SKILLS -->
+        <div class="project-skills">
+            <span class="skill-tag">Video Editing</span>
+            <span class="skill-tag">Post Production</span>
+            <span class="skill-tag">Storytelling</span>
+            <span class="skill-tag">Adobe Premiere Pro</span>
+            <span class="skill-tag">After Effects</span>
+        </div>
+
+        <a href="../portfolio.html" class="btn">
+            <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </a>
+
+    </div>
+</section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3>About Me</h3>
+                    <p>A tech-savvy creative with a BSc in IT and a multimedia background, blending coding, 3D design, VR, and visual storytelling to craft immersive digital experiences. Currently working as an IT Officer while exploring culture through design and media.</p>
+                </div>
+                <div class="footer-section links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/My-portfolio-site/index.html">Home</a></li>
+                        <li><a href="/My-portfolio-site/about.html">About</a></li>
+                        <li><a href="/My-portfolio-site/portfolio.html">Portfolio</a></li>
+                        <li><a href="/My-portfolio-site/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-envelope"></i> mukhtarzik@gmail.com</p>
+                    <div class="socials">
+                        <a href="https://www.linkedin.com/in/mmzlegend23"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/MmzLegend"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/mmzlegend23/?hl=en"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 M M Zikirullahi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+<script src="../js/main.js"></script>
+
+</body>
+</html>

@@ -1,81 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CHRICED Media Project | M M Zikirullahi</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        .video-container {
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHRICED Media Project | M M Zikirullahi</title>
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+
+/* LIGHTBOX */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+}
+
+.lightbox-content {
     position: relative;
-    width: 100%;
-    padding-bottom: 56.25%; /* 16:9 ratio */
-    height: 0;
-    overflow: hidden;
-    border-radius: 16px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    margin: 5% auto;
+    width: 80%;
+    max-width: 900px;
 }
 
-.video-container iframe {
+.lightbox iframe {
+    width: 100%;
+    height: 500px;
+    border-radius: 12px;
+}
+
+.close-btn {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 20px;
+    right: 40px;
+    color: #fff;
+    font-size: 35px;
+    cursor: pointer;
 }
 
-        .video-caption {
-            text-align: center;
-            margin-top: 1rem;
-            color: #666;
-            font-style: italic;
-            font-size: 0.9rem;
-        }
+/* VIDEO THUMBNAILS */
+.video-container {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 12px;
+}
 
-        .media-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
+.video-container img {
+    width: 100%;
+    display: block;
+    transition: transform 0.4s ease;
+}
 
-        .media-grid iframe {
-            width: 100%;
-            height: 200px;
-            border-radius: 12px;
-        }
+/* Hover zoom */
+.video-container:hover img {
+    transform: scale(1.08);
+}
 
-        .project-skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-            margin: 1.5rem 0;
-        }
+/* Dark overlay */
+.video-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.3);
+    opacity: 0;
+    transition: 0.3s;
+}
 
-        .skill-tag {
-            background: #f0f0f0;
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            color: #555;
-        }
+.video-container:hover::before {
+    opacity: 1;
+}
 
-        .btn {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            background: #3a86ff;
-            color: white;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: 0.3s;
-        }
+/* Play button */
+.video-container::after {
+    content: "▶";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    font-size: 40px;
+    color: white;
+    background: rgba(0,0,0,0.6);
+    border-radius: 50%;
+    padding: 10px 15px;
+    opacity: 0;
+    transition: 0.3s;
+}
 
-        .btn:hover {
-            background: #2667cc;
-            transform: translateY(-2px);
-        }
-    </style>
+.video-container:hover::after {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.video-caption {
+    text-align: center;
+    margin-top: 1rem;
+    color: #666;
+    font-style: italic;
+}
+
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.project-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin: 1.5rem 0;
+}
+
+.skill-tag {
+    background: #f0f0f0;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: #3a86ff;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: #2667cc;
+}
+
+</style>
 </head>
 
 <body>
@@ -92,10 +153,11 @@
                         <ul class="dropdown-menu">
                             <li><a href="/My-portfolio-site/portfolio/web-development.html">Web Development</a></li>
                             <li><a href="/My-portfolio-site/portfolio/3d-design.html">3D Design</a></li>
-                            <li><a href="/My-portfolio-site/portfolio/VR-project.html">VR Project</a></li>
+                            <li><a href="/My-portfolio-site/portfolio/vr-project.html">VR Project</a></li>
                             <li><a href="/My-portfolio-site/portfolio/photography.html">Photography</a></li>
                             <li><a href="/My-portfolio-site/portfolio/logo-design.html">Logo Design</a></li>
                             <li><a href="/My-portfolio-site/portfolio/chriced-media.html" class="active">CHRICED Projects</a></li>
+
                         </ul>
                     </li>
                     <li><a href="/My-portfolio-site/contact.html">Contact</a></li>
@@ -108,76 +170,66 @@
     </header>
 
 <section class="project-detail">
-    <div class="container">
+<div class="container">
 
-        <!-- TITLE -->
-        <h1>Digital Media & IT Operations at CHRICED</h1>
-        <p class="subtitle">
-        Content Production, Video Editing & Digital Infrastructure Development for CHRICED & CHRICED Radio/TV
-        </p>
+<h1>Digital Media & IT Operations at CHRICED</h1>
 
-        <!-- FEATURED VIDEO (FGM PROJECT) -->
-        <div class="video-container">
-            <iframe 
-                src="https://www.youtube.com/embed/njUd4b2FLCU"
-                allowfullscreen>
-            </iframe>
-        </div>
+<p class="subtitle">
+Content Production, Video Editing & Digital Infrastructure Development
+</p>
 
-        <p class="video-caption">
-            FGM Awareness Campaign Video
-        </p>
+<!-- FEATURED VIDEO -->
+<div class="video-container" onclick="openLightbox('njUd4b2FLCU')">
+    <img src="https://img.youtube.com/vi/njUd4b2FLCU/hqdefault.jpg">
+</div>
 
-        <!-- OTHER WORKS -->
-        <h2>CHRICED Radio/TV Contributions</h2>
-        <p>
-            I contributed to editing and post-production of multiple videos for CHRICED Radio/TV, focusing on storytelling, pacing, and audience engagement.
-        </p>
+<p class="video-caption">FGM Awareness Campaign Video</p>
 
-        <div class="media-grid">
-            <iframe src="https://www.youtube.com/embed/cgduAHqEf_c"></iframe>
-            <iframe src="https://www.youtube.com/embed/yuXv4c17eiU"></iframe>
-            <iframe src="https://www.youtube.com/embed/Gl1hS8v50_o"></iframe>
-        </div>
+<h2>CHRICED Radio/TV Contributions</h2>
 
-        <!-- DESCRIPTION -->
-        <h2>Project Overview</h2>
-        <p>
-            This project involved producing and editing media content for CHRICED, combining storytelling and technical editing skills to deliver engaging and informative content.
-        </p>
+<div class="media-grid">
 
-        <!-- ROLE -->
-        <h2>My Role</h2>
-        <ul>
-            <li>Video editing and sequencing</li>
-            <li>Audio synchronization and cleanup</li>
-            <li>Visual storytelling and pacing</li>
-            <li>Export optimization for online platforms</li>
-        </ul>
+<div class="video-container" onclick="openLightbox('cgduAHqEf_c')">
+    <img src="https://img.youtube.com/vi/cgduAHqEf_c/hqdefault.jpg">
+</div>
 
-        <!-- IMPACT -->
-        <h2>Impact</h2>
-        <p>
-            The FGM awareness video was created to educate viewers on a sensitive cultural issue, using visual storytelling to communicate its message effectively.
-        </p>
+<div class="video-container" onclick="openLightbox('yuXv4c17eiU')">
+    <img src="https://img.youtube.com/vi/yuXv4c17eiU/hqdefault.jpg">
+</div>
 
-        <!-- SKILLS -->
-        <div class="project-skills">
-            <span class="skill-tag">Video Editing</span>
-            <span class="skill-tag">Post Production</span>
-            <span class="skill-tag">Storytelling</span>
-            <span class="skill-tag">Adobe Premiere Pro</span>
-            <span class="skill-tag">After Effects</span>
-        </div>
+<div class="video-container" onclick="openLightbox('Gl1hS8v50_o')">
+    <img src="https://img.youtube.com/vi/Gl1hS8v50_o/hqdefault.jpg">
+</div>
 
-        <a href="../portfolio.html" class="btn">
-            <i class="fas fa-arrow-left"></i> Back to Portfolio
-        </a>
+</div>
 
-    </div>
+<h2>Project Overview</h2>
+<p>
+Worked across editing, production, reporting, and IT infrastructure while helping improve CHRICED’s digital presence.
+</p>
+
+<h2>My Role</h2>
+<ul>
+<li>Video editing & post-production</li>
+<li>Production team collaboration</li>
+<li>Field reporting support</li>
+<li>IT infrastructure support</li>
+<li>Social media improvement strategy</li>
+</ul>
+
+<div class="project-skills">
+<span class="skill-tag">Video Editing</span>
+<span class="skill-tag">Production</span>
+<span class="skill-tag">IT Support</span>
+<span class="skill-tag">Storytelling</span>
+</div>
+
+<a href="../portfolio.html" class="btn">← Back to Portfolio</a>
+
+</div>
 </section>
 
-    <footer>
+   <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section about">
@@ -209,10 +261,40 @@
         </div>
     </footer>
 
-<script src="../js/main.js"></script>
+<!-- LIGHTBOX -->
+<div id="video-lightbox" class="lightbox">
+<span class="close-btn">&times;</span>
+<div class="lightbox-content">
+<iframe id="lightbox-video" src="" allowfullscreen></iframe>
+</div>
+</div>
+
 <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+function openLightbox(id) {
+    const lightbox = document.getElementById("video-lightbox");
+    const video = document.getElementById("lightbox-video");
+
+    video.src = "https://www.youtube.com/embed/" + id + "?autoplay=1";
+    lightbox.style.display = "block";
+}
+
+function closeLightbox() {
+    document.getElementById("video-lightbox").style.display = "none";
+    document.getElementById("lightbox-video").src = "";
+}
+
+document.querySelector(".close-btn").onclick = closeLightbox;
+
+document.getElementById("video-lightbox").onclick = function(e) {
+    if (e.target.id === "video-lightbox") closeLightbox();
+};
+
+document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") closeLightbox();
+});
+</script>
 
 </body>
 </html>

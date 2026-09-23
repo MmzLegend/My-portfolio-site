@@ -1,186 +1,61 @@
-document.addEventListener('DOMContentLoaded', function() {
+'use strict';
+const menuButton = document.querySelector('.menu-toggle');
+const navigation = document.querySelector('#main-nav');
+if (menuButton && navigation) {
+  menuButton.hidden = false;
+  navigation.dataset.enhanced = 'true';
+  const closeMenu = () => { navigation.classList.remove('is-open'); menuButton.setAttribute('aria-expanded', 'false'); };
+  menuButton.addEventListener('click', () => { const open = navigation.classList.toggle('is-open'); menuButton.setAttribute('aria-expanded', String(open)); });
+  navigation.addEventListener('click', event => { if (event.target.closest('a')) closeMenu(); });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape' && navigation.classList.contains('is-open')) { closeMenu(); menuButton.focus(); } });
+  window.matchMedia('(min-width: 761px)').addEventListener('change', closeMenu);
+}
+const year = document.getElementById('year');
+if (year) year.textContent = new Date().getFullYear();
+const filters = document.querySelector('.filters');
+if (filters) {
+  filters.hidden = false;
+  filters.addEventListener('click', event => {
+    const button = event.target.closest('[data-filter]');
+    if (!button) return;
+    let visible = 0;
+    document.querySelectorAll('.work-card').forEach(card => {
+      card.hidden = button.dataset.filter !== 'All work' && card.dataset.category !== button.dataset.filter;
+      if (!card.hidden) visible++;
+    });
+    filters.querySelectorAll('button').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+    document.getElementById('filter-status').textContent = `${visible} ${visible === 1 ? 'project' : 'projects'} shown`;
+  });
+}
+const form = document.getElementById('contactForm');
+if (form) {
+  const service = new URLSearchParams(window.location.search).get('service');
+  if (Array.from(form.elements.service.options).some(option => option.value === service)) form.elements.service.value = service;
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+    const button = form.querySelector('[type="submit"]');
+    if (button.disabled) return;
+    const status = document.getElementById('form-status');
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 15000);
+    button.disabled = true;
+    button.textContent = 'Sending your enquiry…';
+    status.dataset.state = 'pending';
+    status.textContent = 'Please wait while your enquiry is sent.';
     try {
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const navMenu = document.querySelector('nav ul');
-    const dropdowns = document.querySelectorAll('.dropdown');
-    
-    if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-            this.querySelector('i').classList.toggle('fa-times');
-            this.querySelector('i').classList.toggle('fa-bars');
-        });
+      const response = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' }, signal: controller.signal });
+      if (!response.ok) throw new Error('The form service did not accept the enquiry.');
+      status.dataset.state = 'success';
+      status.textContent = 'Your enquiry has been submitted. Thank you — I’ll get back to you by email.';
+      form.reset();
+    } catch (_) {
+      status.dataset.state = 'error';
+      status.textContent = 'We couldn’t confirm your enquiry was sent. Your details are still here. Please try again, or email mukhtarzik@gmail.com directly.';
+    } finally {
+      clearTimeout(timeout);
+      button.disabled = false;
+      button.textContent = 'Send project enquiry ↗';
     }
-
-    } catch (error) {
-        console.error("Menu Error:", error);
-    }
-});
-    
-    // Dropdown Toggle for Mobile
-    dropdowns.forEach(dropdown => {
-        const link = dropdown.querySelector('a');
-        
-        link.addEventListener('click', function(e) {
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                dropdown.classList.toggle('active');
-            }
-        });
-    });
-    
-    // Smooth Scrolling for Anchor Links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-                
-                // Close mobile menu if open
-                if (navMenu.classList.contains('active')) {
-                    navMenu.classList.remove('active');
-                    mobileMenuBtn.querySelector('i').classList.remove('fa-times');
-                    mobileMenuBtn.querySelector('i').classList.add('fa-bars');
-                }
-            }
-        });
-    });
-    
-    // Contact Form Submission
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(this);
-            const submitBtn = this.querySelector('button[type="submit"]');
-            
-            // Change button text and disable it
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
-            
-            fetch(this.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            })
-            .then(response => {
-                if (response.ok) {
-                    alert('Message sent successfully!');
-                    this.reset();
-                } else {
-                    throw new Error('Network response was not ok');
-                }
-            })
-            .catch(error => {
-                alert('There was a problem sending your message. Please try again later.');
-                console.error('Error:', error);
-            })
-            .finally(() => {
-                submitBtn.textContent = 'Send Message';
-                submitBtn.disabled = false;
-            });
-        });
-    }
-    
-    // Add animation class when elements come into view
-    const animateOnScroll = function() {
-        const elements = document.querySelectorAll('.project-card, .about-image, .contact-info, .contact-form');
-        
-        elements.forEach(element => {
-            const elementPosition = element.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
-            
-            if (elementPosition < windowHeight - 100) {
-                element.classList.add('animate');
-            }
-        });
-    };
-    
-    // Run once on page load
-    animateOnScroll();
-    
-    // Run on scroll
-    window.addEventListener('scroll', animateOnScroll);
-;
-document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const navMenu = document.querySelector('nav ul');
-    
-    if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-            this.querySelector('i').classList.toggle('fa-bars');
-            this.querySelector('i').classList.toggle('fa-times');
-        });
-    }
-    
-    // Handle dropdowns on mobile
-    const dropdowns = document.querySelectorAll('.dropdown');
-    dropdowns.forEach(dropdown => {
-        const link = dropdown.querySelector('a');
-        
-        link.addEventListener('click', function(e) {
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                dropdown.classList.toggle('active');
-            }
-        });
-    });
-});
-document.querySelectorAll('.dropdown').forEach(dropdown => {
-    const rect = dropdown.getBoundingClientRect();
-    if (rect.right + 200 > window.innerWidth) {
-        dropdown.classList.add('right-edge');
-    }
-});
-document.addEventListener('DOMContentLoaded', function() {
-    function adjustDropdownPositions() {
-        document.querySelectorAll('.dropdown').forEach(dropdown => {
-            // Reset any previous adjustments
-            dropdown.classList.remove('right-edge');
-            
-            // Only calculate for desktop view
-            if (window.innerWidth > 768) {
-                const dropdownRect = dropdown.getBoundingClientRect();
-                const menuWidth = 200; // Same as min-width
-                
-                // Check if dropdown would go off-screen
-                if (dropdownRect.left + menuWidth > window.innerWidth) {
-                    dropdown.classList.add('right-edge');
-                }
-            }
-        });
-    }
-    
-    // Run initially and on window resize
-    adjustDropdownPositions();
-    window.addEventListener('resize', adjustDropdownPositions);
-});
-document.addEventListener('DOMContentLoaded', function() {
-    const firstVideo = document.querySelector('.video-container iframe:first-of-type');
-    const secondVideo = document.querySelector('.video-container iframe:last-of-type');
-    
-    // YouTube iframes need special handling for detecting when they end
-    // You'll need to use the YouTube IFrame API for proper detection
-    // This is a simplified version that may need adjustment
-    
-    // For demo purposes, we'll just show the basic structure
-    firstVideo.addEventListener('load', function() {
-        // This would need YouTube API implementation to properly detect end
-        console.log("First video loaded - would need YouTube API for end detection");
-    });
-    
-    // You would need to implement proper YouTube API handling here
-    // See: https://developers.google.com/youtube/iframe_api_reference
-});
+  });
+}

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mmzlegend.github.io/My-portfolio-site/sitemap.xml

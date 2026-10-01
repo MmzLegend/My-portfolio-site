@@ -26,3 +26,5 @@ html.motion-paused{scroll-behavior:auto}[data-world=studio] .site-header a:hover
 .org-links{display:flex;flex-direction:column;align-items:flex-start;gap:14px;margin-top:auto}.org-links .text-link{margin-top:0}
 
 .site-bluey{background:#e9f4f9;color:#123958}.site-bluey .eyebrow,.site-bluey .lead{color:#315a75}.site-bluey .button{background:#1d648f;color:white}.site-fiffy{background:#171a17;color:#f1f2e9}.site-fiffy .lead{color:#d0d5c9}.site-fiffy .eyebrow{color:#d5ff79}.site-fiffy .button{background:#d5ff79;color:#171a17}
+
+.site-eon{background:#090f19;color:#f1f5f8}.site-eon .lead{color:#c2ced8}.site-eon .eyebrow{color:#a8eaf7}.site-eon .button{background:#a8eaf7;color:#091923}

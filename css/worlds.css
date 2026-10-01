@@ -24,3 +24,5 @@ html.motion-paused{scroll-behavior:auto}[data-world=studio] .site-header a:hover
 .arrow-icon{display:inline-block;width:1em;height:1em;vertical-align:-.12em;flex-shrink:0;overflow:visible}
 
 .org-links{display:flex;flex-direction:column;align-items:flex-start;gap:14px;margin-top:auto}.org-links .text-link{margin-top:0}
+
+.site-bluey{background:#e9f4f9;color:#123958}.site-bluey .eyebrow,.site-bluey .lead{color:#315a75}.site-bluey .button{background:#1d648f;color:white}.site-fiffy{background:#171a17;color:#f1f2e9}.site-fiffy .lead{color:#d0d5c9}.site-fiffy .eyebrow{color:#d5ff79}.site-fiffy .button{background:#d5ff79;color:#171a17}

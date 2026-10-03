@@ -1,0 +1,68 @@
+[
+  {
+    "slug": "aurelia-retreat",
+    "name": "Aurelia Retreat",
+    "category": "Web",
+    "discipline": "Hospitality website concept",
+    "desc": "An imagined island retreat with editorial room discovery and a complete browser-local reservation simulation.",
+    "approach": "Warm paper, olive tones and image-led compositions frame a calm arrival. The booking flow validates dates and guests, filters rooms by capacity and presents fictional itemized euro pricing before a clearly marked demo confirmation.",
+    "proof": "Room discovery, date validation, capacity selection, price review, refresh persistence, cancellation and reset were verified in an isolated browser.",
+    "limit": "A fictional property with illustrative licensed mood photography. No inventory service, payment or real reservation.",
+    "image": "aurelia-retreat-desktop.jpg"
+  },
+  {
+    "slug": "kora-live",
+    "name": "Kora Live",
+    "category": "Web",
+    "discipline": "Event discovery and ticketing concept",
+    "desc": "A fictional cultural calendar that turns event discovery into an interactive seat-selection and demo-ticket journey.",
+    "approach": "Original event artwork, a dark canvas and lively lime accents give each fictional gathering its own presence. Discovery filters lead into event details, selectable spots, transparent totals and a local ticket wallet.",
+    "proof": "Selection rules reject duplicate, unavailable and invalid spots. Browser-local ticket persistence, repeat booking and reset flows were exercised.",
+    "limit": "All events, venues, capacities and prices are fictional. Tickets are demo records, with no payment or real admission.",
+    "image": "kora-live-desktop.jpg"
+  },
+  {
+    "slug": "fieldnote",
+    "name": "Fieldnote",
+    "category": "Web",
+    "discipline": "Studio workspace concept",
+    "desc": "A working fictional studio dashboard connecting tasks, projects and people through board, list and calendar views.",
+    "approach": "A restrained paper-and-moss interface gives space to day-to-day decisions. Task editing, creation and deletion update linked summaries; search and filters work across views, with a cancelable reset.",
+    "proof": "Seed integrity tests passed. Task changes, view navigation, filtering, calendar movement and refresh persistence were tested locally.",
+    "limit": "No real studio data, login, invitations, shared database or live integrations. Edits belong to the current browser.",
+    "image": "fieldnote-desktop.jpg"
+  },
+  {
+    "slug": "luma-academy",
+    "name": "Luma Academy",
+    "category": "Web",
+    "discipline": "Creative learning platform concept",
+    "desc": "A fictional learning academy with one complete visual-hierarchy course, an interactive poster lab and a progress dashboard.",
+    "approach": "Warm editorial typography and original CSS artwork connect course discovery with practice. The working course includes lessons, a poster exercise, a three-question knowledge check and persistent learning progress.",
+    "proof": "Course discovery, bookmarks, lessons, poster settings, quiz states, dashboard persistence and reset were exercised in isolated browser journeys.",
+    "limit": "One course is complete; two others are upcoming previews. Achievements are samples and non-accredited. No real institution or enrollment service.",
+    "image": "luma-academy-desktop.jpg"
+  },
+  {
+    "slug": "naya-muse",
+    "name": "Naya Muse",
+    "category": "Web",
+    "discipline": "Fashion and beauty commerce concept",
+    "desc": "An original editorial store concept with photorealistic AI campaign imagery, product variants and a complete fictional bag-to-confirmation flow.",
+    "approach": "The latest imagery comprises 20 original AI-generated campaign and product concepts. Product filtering, search, price sorting, clothing colours/sizes and cosmetic shades lead to a persistent multi-variant bag and acknowledged demo checkout.",
+    "proof": "Variant, stock, storage and integer-price unit tests passed. Discovery, product details, bag changes, checkout and mobile layouts were verified.",
+    "limit": "All products, people, prices and stock are fictional. Images do not document manufactured garments or tested cosmetics. No payment, personal-data collection or order submission.",
+    "image": "naya-muse-desktop.jpg"
+  },
+  {
+    "slug": "luma-galleria",
+    "name": "Luma Galleria",
+    "category": "3D & VR",
+    "discipline": "3D / Architectural Design",
+    "desc": "An original mall architecture study with an editable 3D model, matching 2D plan, actual model renders and an optional rotatable viewer.",
+    "approach": "A 74 \u00d7 100 m concept footprint organizes 22 units around a glazed atrium and cross gallery. Limestone, bronze framing, timber fit-outs, transparent shopfronts, a gabled glass roof and a landscaped arrival plaza form a coherent model and plan.",
+    "proof": "The exported GLB was loaded and its bounds, materials and roof meshes checked. Roof, shell and furniture toggles, view presets and the matching floor plan were exercised.",
+    "limit": "A self-initiated architectural visualization, not a website project or certified construction package. Dimensions are chosen design values; structural, fire, accessibility and building-services engineering are not provided.",
+    "image": "luma-galleria-exterior.jpg"
+  }
+]
